@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="{% static 'media/js/main.js' %}"></script>
+</head>
+<body>
+    <input type="hidden" id="csrf" value="{{ csrf_token }}">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light bg-dark shadow">
+        <div class="container">
+        <a class="navbar-brand text-white" href="#">Blog app</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link text-white pr-3" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active pr-3">
+                <a class="nav-link text-white btn btn-success " href="{% url 'login1' %}">Login <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active pr-3">
+                <a class="nav-link text-white btn btn-info text-white " href="{% url 'register'%}">Register <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </div>
+        </div>
+      </nav>
+
+    {% block body_block %}
+
+
+    {% endblock %}
+    <footer class="bg-dark p-3">
+        <p class="text-center text-white">All right reserved blog app</p>
+    </footer>
+
+
+
+
+
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/mdb.js' %}"></script>
+</body>
+</html>
